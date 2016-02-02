@@ -1,25 +1,17 @@
-//------------------------------------------------------------------------------
-// Original CPSL code
-//------------------------------------------------------------------------------
+/**
+* Original CPSL code will be here
+*/
 
 
 #include <stdio.h>
 #include "Func.h"
-#include "Var.h"
-#include "Topology.h"
-
 
 
 /// entry to our framework
 int main(int argc, char *argv[]) {
-    // first, print the Copyright notice
-    Func state_estimation;
-    Var v, y;
-    Topology t;
-    //Measurement s; TODO
-    // We might need to add a MATRIX type.
-    //state_estimation(v) = op1(t,s); TODO
-    state_estimation.compile_to_c();
+    Case casem("case.m");
+    Func state_estimation(casem);
+    state_estimation.compile_to_c("c_source.cpp");
 
     printf("CPSL code generated, but not yet run.\n");
     return 0;
