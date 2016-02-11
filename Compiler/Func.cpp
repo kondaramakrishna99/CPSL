@@ -25,7 +25,11 @@ void Func::compile_to_c(std::string fName, Target t) {
 
 }
 
+void Func::operator=(ExprNode e){
+    exprs.push_back(e);
+}
 /*template<class Var, class... Args>
 void Func::operator() (Var t, Args... args){
 
 }*/
+
